@@ -6,9 +6,20 @@
   <a href="README.zh-CN.md">中文</a>
 </p>
 
-<p align="center">
-  <img src="assets/cat-terminal-mosaic.gif" alt="A cat video rendered as terminal mosaic blocks" width="736">
-</p>
+<table>
+  <tr>
+    <td align="center"><strong>Source video</strong></td>
+    <td align="center"><strong>Terminal mosaic GIF</strong></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <video src="Data/cat.mp4" controls loop playsinline width="360"></video>
+    </td>
+    <td align="center">
+      <img src="assets/cat-terminal-mosaic.gif" alt="A cat video rendered as terminal mosaic blocks" width="360">
+    </td>
+  </tr>
+</table>
 
 Termosaic renders images, GIFs, and videos as true-color mosaic blocks directly in your terminal. It opens a fullscreen terminal view, centers the rendered frame, loops animated media, and keeps static images on screen until you press `Ctrl-C`.
 

@@ -6,9 +6,20 @@
   <strong>中文</strong>
 </p>
 
-<p align="center">
-  <img src="assets/cat-terminal-mosaic.gif" alt="在终端中渲染成马赛克色块的小猫视频" width="736">
-</p>
+<table>
+  <tr>
+    <td align="center"><strong>原视频</strong></td>
+    <td align="center"><strong>终端马赛克 GIF</strong></td>
+  </tr>
+  <tr>
+    <td align="center">
+      <video src="Data/cat.mp4" controls loop playsinline width="360"></video>
+    </td>
+    <td align="center">
+      <img src="assets/cat-terminal-mosaic.gif" alt="在终端中渲染成马赛克色块的小猫视频" width="360">
+    </td>
+  </tr>
+</table>
 
 Termosaic 可以把图片、GIF 和视频直接渲染成终端里的真彩色马赛克色块。程序会进入全屏终端页面，把画面放在终端中间；静态图片会一直停留到 `Ctrl-C`，GIF 和视频会循环播放到 `Ctrl-C`。
 
