@@ -13,7 +13,9 @@
   </tr>
   <tr>
     <td align="center">
-      <video src="Data/cat.mp4" controls loop playsinline width="360"></video>
+      <a href="Data/cat.mp4">
+        <img src="assets/cat-source-preview.gif" alt="Source cat video preview" width="360">
+      </a>
     </td>
     <td align="center">
       <img src="assets/cat-terminal-mosaic.gif" alt="A cat video rendered as terminal mosaic blocks" width="360">

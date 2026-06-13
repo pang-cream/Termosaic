@@ -13,7 +13,9 @@
   </tr>
   <tr>
     <td align="center">
-      <video src="Data/cat.mp4" controls loop playsinline width="360"></video>
+      <a href="Data/cat.mp4">
+        <img src="assets/cat-source-preview.gif" alt="原视频预览" width="360">
+      </a>
     </td>
     <td align="center">
       <img src="assets/cat-terminal-mosaic.gif" alt="在终端中渲染成马赛克色块的小猫视频" width="360">
