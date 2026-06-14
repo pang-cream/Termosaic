@@ -114,16 +114,23 @@ uv run termosaic --help --lang zh
 
 ## 常用参数
 
-增加输出宽度：
+指定横向色块数。`--blocks-wide` 是 `--width` 的别名：
 
 ```bash
-uv run termosaic Data/cat.mp4 --kind video --width 160
+uv run termosaic Data/cat.mp4 --kind video --blocks-wide 160
 ```
 
-指定输出高度。默认 `half` 模式下，`--height 40` 会采样 80 行图像像素：
+指定纵向色块数。默认 `half` 模式下，`--blocks-high 40` 会采样 80 行图像像素：
 
 ```bash
-uv run termosaic image.png --width 120 --height 40
+uv run termosaic image.png --blocks-wide 120 --blocks-high 40
+```
+
+导出渲染后的像素图。静态图片导出 PNG，GIF 和视频导出 GIF：
+
+```bash
+uv run termosaic image.png --blocks-wide 120 --export-pixels
+uv run termosaic Data/cat.mp4 --kind video --blocks-wide 120 --export-pixels preview.gif
 ```
 
 切换采样方式：
@@ -163,12 +170,13 @@ uv run termosaic Data/cat.mp4 --kind video --no-cache
 | `--mode half\|full` | 色块模式。`half` 使用上半块字符，竖向分辨率更高。 |
 | `--sample feature\|average\|nearest` | 像素采样方式。默认是 `feature`。 |
 | `--scale SCALE` | 主体缩放倍数。`1` 是默认，`1.5` 更近，`0.7` 更远。 |
-| `--width WIDTH` | 输出宽度，单位是终端列。不传则自动适配终端。 |
-| `--height HEIGHT` | 输出高度，单位是终端行。`half` 模式会采样两倍图像行数。 |
+| `--width WIDTH`, `--blocks-wide WIDTH` | 输出宽度，单位是终端列/色块数。不传则自动适配终端。 |
+| `--height HEIGHT`, `--blocks-high HEIGHT` | 输出高度，单位是终端行/色块数。`half` 模式会采样两倍图像行数。 |
 | `--background #RRGGBB` | 透明图片背景色。 |
 | `--fps FPS` | 指定 GIF 或视频播放帧率。 |
 | `--max-fps FPS` | 自动播放帧率上限。默认 `30`。 |
 | `--speed SPEED` | 播放速度倍数。`2` 是两倍速，`0.5` 是半速。 |
+| `--export-pixels [PATH]` | 导出渲染后的像素图。不传 PATH 时自动使用 `*-termosaic` 文件名。 |
 | `--no-cache` | 关闭视频渲染帧缓存，适合很长的视频。 |
 | `--zh` | 配合 `--help` 输出中文帮助。 |
 | `--lang en\|zh` | 帮助语言选择。默认 `en`。 |

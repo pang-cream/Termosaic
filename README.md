@@ -114,16 +114,23 @@ uv run termosaic --help --lang zh
 
 ## Common Options
 
-Increase output width:
+Set the horizontal block count. `--blocks-wide` is an alias for `--width`:
 
 ```bash
-uv run termosaic Data/cat.mp4 --kind video --width 160
+uv run termosaic Data/cat.mp4 --kind video --blocks-wide 160
 ```
 
-Control output height. In `half` mode, `--height 40` samples 80 image rows:
+Set the vertical block count. In `half` mode, `--blocks-high 40` samples 80 image rows:
 
 ```bash
-uv run termosaic image.png --width 120 --height 40
+uv run termosaic image.png --blocks-wide 120 --blocks-high 40
+```
+
+Export the rendered pixel image. Static images export PNG; GIFs and videos export GIF:
+
+```bash
+uv run termosaic image.png --blocks-wide 120 --export-pixels
+uv run termosaic Data/cat.mp4 --kind video --blocks-wide 120 --export-pixels preview.gif
 ```
 
 Change sampling mode:
@@ -163,12 +170,13 @@ uv run termosaic Data/cat.mp4 --kind video --no-cache
 | `--mode half\|full` | Block mode. `half` uses upper-half blocks for higher vertical resolution. |
 | `--sample feature\|average\|nearest` | Pixel sampling mode. Default: `feature`. |
 | `--scale SCALE` | Subject scale. `1` is default, `1.5` is closer, `0.7` is farther. |
-| `--width WIDTH` | Output width in terminal columns. Auto-fits when omitted. |
-| `--height HEIGHT` | Output height in terminal rows. `half` mode samples twice as many image rows. |
+| `--width WIDTH`, `--blocks-wide WIDTH` | Output width in terminal columns/blocks. Auto-fits when omitted. |
+| `--height HEIGHT`, `--blocks-high HEIGHT` | Output height in terminal rows/blocks. `half` mode samples twice as many image rows. |
 | `--background #RRGGBB` | Background color for transparent images. |
 | `--fps FPS` | GIF or video playback FPS. |
 | `--max-fps FPS` | Auto playback FPS cap. Default: `30`. |
 | `--speed SPEED` | Playback speed multiplier. `2` is double speed, `0.5` is half speed. |
+| `--export-pixels [PATH]` | Export the rendered pixel image. Uses an automatic `*-termosaic` filename when PATH is omitted. |
 | `--no-cache` | Disable rendered video frame caching. Useful for long videos. |
 | `--zh` | Show Chinese help when used with `--help`. |
 | `--lang en\|zh` | Help language selector. Default: `en`. |
